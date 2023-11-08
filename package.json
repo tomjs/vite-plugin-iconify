@@ -1,0 +1,90 @@
+{
+  "name": "@tomjs/vite-plugin-iconify",
+  "version": "0.0.1",
+  "description": "iconify plugin for vite",
+  "keywords": [
+    "tomjs",
+    "vite",
+    "plugin",
+    "vite-plugin",
+    "vue",
+    "react",
+    "html",
+    "iconify"
+  ],
+  "author": {
+    "name": "tom",
+    "email": "tom@tomgao.cc"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomgao365/vite-plugin-iconify.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "dist",
+    "*.md"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "pnpm unbuild",
+    "lint": "run-s lint:eslint lint:stylelint lint:prettier",
+    "lint:eslint": "eslint \"{src,examples}/**/*.{ts,tsx,vue}\" *.{js,cjs,ts} --fix --cache",
+    "lint:stylelint": "stylelint \"examples/**/*.{vue,css,less,html}\" --fix --cache",
+    "lint:prettier": "prettier --write \"{src,examples}/**/*.{js,cjs,ts,tsx,json,md,html}\" *.{js,cjs,ts,json,md}",
+    "bootstrap": "pnpm build && run-p bootstrap:*",
+    "bootstrap:vue": "cd examples/vue && pnpm i",
+    "bootstrap:react": "cd examples/react && pnpm i",
+    "prepare": "husky install",
+    "prepublishOnly": "npm run build && np --any-branch --no-yarn --yolo --no-publish --message \"chore: release v%s\""
+  },
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=8"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "lodash": "^4.17.21",
+    "node-html-parser": "^6.1.11"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.2.0",
+    "@tomjs/commitlint": "^1.0.4",
+    "@tomjs/eslint": "^1.0.4",
+    "@tomjs/prettier": "^1.0.2",
+    "@tomjs/stylelint": "^1.0.2",
+    "@tomjs/tsconfig": "^1.0.4",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^16.18.61",
+    "eslint": "^8.52.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.2",
+    "np": "^8.0.4",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.3",
+    "stylelint": "^15.11.0",
+    "typescript": "^5.2.2",
+    "unbuild": "^2.0.0",
+    "vite": "^4.5.0"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowAny": [
+        "rollup"
+      ]
+    }
+  }
+}

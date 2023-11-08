@@ -1,0 +1,18 @@
+# IDE
+.vscode
+.idea
+.history
+.git
+
+# temp
+.cache
+.temp
+.tmp
+
+# project
+node_modules
+public
+dist
+build
+packages/*/es
+packages/*/lib
