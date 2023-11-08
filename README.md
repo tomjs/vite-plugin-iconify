@@ -38,7 +38,14 @@ import vue from '@vitejs/plugin-vue';
 import iconify from '@tomjs/vite-plugin-iconify';
 
 export default defineConfig({
-  plugins: [vue(), iconify({})],
+  plugins: [
+    vue(),
+    iconify({
+      resources: ['https://unpkg.com/@iconify/json/json'],
+      rotate: 3000,
+      local: ['ant-design', 'ep'],
+    }),
+  ],
 });
 ```
 
@@ -50,15 +57,39 @@ import react from '@vitejs/plugin-react-swc';
 import iconify from '@tomjs/vite-plugin-iconify';
 
 export default defineConfig({
-  plugins: [react(), iconify({})],
+  plugins: [
+    react(),
+    iconify({
+      resources: ['https://unpkg.com/@iconify/json/json'],
+      rotate: 3000,
+      local: ['ant-design', 'ep'],
+    }),
+  ],
 });
 ```
 
 #### 参数
 
-| 参数名   | 类型     | 默认值  | 说明                                                     |
-| -------- | -------- | ------- | -------------------------------------------------------- |
+| 参数名 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- |
 | selector | `string` | 'title' | 标签选择器，注入IconifyProviders脚本添加在指定的标签后面 |
+| resources | `string[]` | [] | 图标 API 地址，默认带上 https://api.iconify.design |
+| rotate | `number` | 750 | 使用下一个主机之前的超时时间（以毫秒为单位） |
+| timeout | `number` | 5000 | API 查询被视为失败之前的超时时间（以毫秒为单位） |
+| local | `'boolean'\|'IconifySet[]'\|IconifyLocal[]` | false | 本地图标集配置 |
+
+##### IconifySet
+
+iconify 图标集，参考 [icon sets](https://icon-sets.iconify.design/) 或 [Icônes](https://icones.js.org/)
+
+##### IconifyLocal
+
+| 参数名 | 类型 | 默认值 | 说明 |
+| --- | --- | --- | --- |
+| **sets** | `IconifySet[]` | [] | iconify 图标集 |
+| base | `string` | '/' | 同 vite 配置 base 选项 |
+| outDir | `string` | 'dist' | 本地输出目录, 默认同 vite 配置 build.outDir 选项 |
+| path | `string` | 'npm/@iconify/json@{version}' | 本地输出路径，对应模块url也会替换为该路径 |
 
 ## 开发
 

@@ -4,5 +4,12 @@ import iconify from '../../dist/index.mjs';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), iconify({})],
+  plugins: [
+    react(),
+    iconify({
+      resources: ['https://unpkg.com/@iconify/json/json'],
+      rotate: 3000,
+      local: ['ant-design', 'ep'],
+    }),
+  ],
 });
