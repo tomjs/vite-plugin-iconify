@@ -1,5 +1,5 @@
 /**
- * iconify 图标集
+ * iconify icon sets
  */
 export type IconifySet =
   | 'academicons'
@@ -166,7 +166,7 @@ export type IconifySet =
   | 'zmdi'
   | 'zondicons';
 
-// 从 https://www.npmjs.com/package/@iconify/json?activeTab=code 获取
+// get from https://www.npmjs.com/package/@iconify/json?activeTab=code
 
 // var types = [];
 // document.querySelectorAll('._75771d2d button').forEach(s => {
@@ -179,49 +179,53 @@ export type IconifySet =
 // console.log(types.join('|'));
 
 /**
- * 本地图标集配置
+ * Local icon set configuration
  */
 export interface IconifyLocal {
   /**
-   * iconify 图标集
+   * Iconify icon sets
    */
   sets: IconifySet[];
   /**
-   * 同 vite 配置 base 选项，默认为 /
+   * Same as Vite configuration base option, default is '/'
    */
   base?: string;
   /**
-   * 本地输出目录, 默认同 vite 配置 build.outDir 选项，默认为 dist
+   * Local output directory, default is the same as Vite configuration build.outDir option, which is 'dist' by default
    */
   outDir?: string;
   /**
-   *  本地输出路径，对应模块url也会替换为该路径，默认为 npm/@iconify/json@{version}
+   * Local output path, module URLs will also be replaced with this path, default is npm/@iconify/json@{version}
    */
   path?: string;
+  /**
+   * Whether to copy the icon to the local device, with a default value of true.
+   */
+  copy?: boolean;
 }
 
 /**
- * iconify 插件配置
+ * Iconify plugin configuration
  */
 export interface IconifyOptions {
   /**
-   * 标签选择器，注入IconifyProviders脚本添加在指定的标签后面，默认为 title
+   * Selector for the tag to inject IconifyProviders script after, default is 'title'
    */
   selector?: string;
   /**
-   * 图标 API 地址，默认值为 https://api.iconify.design
+   * Icon API URLs, default value is 'https://api.iconify.design'
    */
   resources?: string[];
   /**
-   * 使用下一个主机之前的超时时间（以毫秒为单位），默认值为 750
+   * Timeout before using next host, in milliseconds, default value is 750
    */
   rotate?: number;
   /**
-   * API 查询被视为失败之前的超时时间（以毫秒为单位），默认值为 5000
+   * Timeout for API query to be considered as failed, in milliseconds, default value is 5000
    */
   timeout?: number;
   /**
-   * 本地图标集配置，默认为 false
+   * Local icon set configuration, default is false
    */
   local?: boolean | IconifySet[] | IconifyLocal;
 }

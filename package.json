@@ -1,7 +1,7 @@
 {
   "name": "@tomjs/vite-plugin-iconify",
   "version": "1.0.0",
-  "description": "iconify plugin for vite",
+  "description": "A Vite plugin for handling iconify icon sets in environments without internet access.",
   "keywords": [
     "tomjs",
     "vite",
@@ -39,8 +39,12 @@
       "types": "./dist/index.d.ts"
     }
   },
+  "bin": {
+    "ti": "./dist/cli/index.cjs"
+  },
   "scripts": {
-    "build": "pnpm unbuild",
+    "build": "pnpm clean && pnpm unbuild",
+    "clean": "rimraf ./dist",
     "lint": "run-s lint:eslint lint:stylelint lint:prettier",
     "lint:eslint": "eslint \"{src,examples}/**/*.{ts,tsx,vue}\" *.{js,cjs,ts} --fix --cache",
     "lint:stylelint": "stylelint \"examples/**/*.{vue,css,less,html}\" --fix --cache",
@@ -56,9 +60,11 @@
     "pnpm": ">=8"
   },
   "dependencies": {
+    "cac": "^6.7.14",
     "fs-extra": "^11.1.1",
     "lodash": "^4.17.21",
-    "node-html-parser": "^6.1.11"
+    "node-html-parser": "^6.1.11",
+    "picocolors": "^1.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.2.0",
@@ -75,16 +81,10 @@
     "np": "^8.0.4",
     "npm-run-all": "^4.1.5",
     "prettier": "^3.0.3",
+    "rimraf": "^5.0.5",
     "stylelint": "^15.11.0",
     "typescript": "^5.2.2",
     "unbuild": "^2.0.0",
     "vite": "^4.5.0"
-  },
-  "pnpm": {
-    "peerDependencyRules": {
-      "allowAny": [
-        "rollup"
-      ]
-    }
   }
 }

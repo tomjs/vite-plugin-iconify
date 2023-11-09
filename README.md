@@ -2,35 +2,37 @@
 
 ![npm](https://img.shields.io/npm/v/%40tomjs/vite-plugin-iconify) ![NPM](https://img.shields.io/npm/l/%40tomjs%2Feslint) ![npm package minimized gzipped size (scoped version select exports)](https://img.shields.io/bundlejs/size/%40tomjs/vite-plugin-iconify)
 
-vite 插件，用于处理 iconify 图标集局域网等环境使用
+A Vite plugin for handling iconify icon sets in environments without internet access.
 
-## 安装
+**English** | [中文](./README.zh_CN.md)
 
-使用 `pnpm` 安装
+## Installation
+
+Install using `pnpm`
 
 ```bash
 pnpm add @tomjs/vite-plugin-iconify -D
 ```
 
-使用 `yarn` 安装
+Install using `yarn`
 
 ```bash
 yarn add @tomjs/vite-plugin-iconify -D
 ```
 
-使用 `npm` 安装
+Install using `npm`
 
 ```bash
 npm i @tomjs/vite-plugin-iconify -D
 ```
 
-## 使用说明
+## Usage
 
-以 vue/react 项目为例
+Using Vue/React projects as examples:
 
-### 使用插件
+### Using the plugin
 
-#### vue示例
+#### Vue Example
 
 ```js
 import { defineConfig } from 'vite';
@@ -49,7 +51,7 @@ export default defineConfig({
 });
 ```
 
-#### react示例
+#### React Example
 
 ```js
 import { defineConfig } from 'vite';
@@ -68,42 +70,69 @@ export default defineConfig({
 });
 ```
 
-#### 参数
+#### Options
 
-| 参数名 | 类型 | 默认值 | 说明 |
+| Option | Type | Default | Description |
 | --- | --- | --- | --- |
-| selector | `string` | 'title' | 标签选择器，注入IconifyProviders脚本添加在指定的标签后面 |
-| resources | `string[]` | [] | 图标 API 地址，默认带上 https://api.iconify.design |
-| rotate | `number` | 750 | 使用下一个主机之前的超时时间（以毫秒为单位） |
-| timeout | `number` | 5000 | API 查询被视为失败之前的超时时间（以毫秒为单位） |
-| local | `'boolean'\|'IconifySet[]'\|IconifyLocal[]` | false | 本地图标集配置 |
+| selector | `string` | 'title' | The tag selector to inject the IconifyProviders script after |
+| resources | `string[]` | [] | Icon API URLs, default includes https://api.iconify.design |
+| rotate | `number` | 750 | Timeout in milliseconds before using the next host |
+| timeout | `number` | 5000 | Timeout in milliseconds before an API query is considered failed |
+| local | `'boolean'\|'IconifySet[]'\|IconifyLocal[]` | false | Local icon set configuration |
 
 ##### IconifySet
 
-iconify 图标集，参考 [icon sets](https://icon-sets.iconify.design/) 或 [Icônes](https://icones.js.org/)
+Iconify icon set, refer to [icon sets](https://icon-sets.iconify.design/) or [Icônes](https://icones.js.org/)
 
 ##### IconifyLocal
 
-| 参数名 | 类型 | 默认值 | 说明 |
+By configuring this parameter, the local icon set will be copied to the `outDir` directory based on the `sets` configuration.
+
+| Option | Type | Default | Description |
 | --- | --- | --- | --- |
-| **sets** | `IconifySet[]` | [] | iconify 图标集 |
-| base | `string` | '/' | 同 vite 配置 base 选项 |
-| outDir | `string` | 'dist' | 本地输出目录, 默认同 vite 配置 build.outDir 选项 |
-| path | `string` | 'npm/@iconify/json@{version}' | 本地输出路径，对应模块url也会替换为该路径 |
+| **sets** | `IconifySet[]` | [] | Iconify icon sets |
+| base | `string` | '/' | Same as the `base` option in Vite configuration |
+| outDir | `string` | 'dist' | Local output directory, default is the same as the `build.outDir` option in Vite configuration |
+| path | `string` | 'npm/@iconify/json@{version}' | Local output path, the corresponding module URL will also be replaced with this path |
 
-## 开发
+### Using CLI
 
-- 开发环境
+Generate Iconify icon set data for icon selection and other functionalities.
+
+- Add the following script to `package.json` under `scripts` : `ti ant-design ep --path src/constants`
+- Or run the following command directly: `pnpm ti ant-design ep --path src/constants`
+
+```bash
+Usage:
+  $ ti [...sets]
+
+Commands:
+  [...sets]  create icon collection data based on @iconify/json in the project
+
+For more info, run any command with the `--help` flag:
+  $ ti --help
+
+Options:
+  --path <path>  [string] output file path. (default: src)
+  --name <name>  [string] output file name. if tsconfig is exists, default is 'iconify.ts', or is 'iconify.js'
+  --type <type>  ["esm" | "cjs"] output file type. (default: esm)
+  -h, --help     Display this message
+  -v, --version  Display version number
+```
+
+## Development
+
+- Development requirements:
 
   - git
   - node>=16
   - pnpm>=8
 
-- 首次使用，需要安装依赖，执行如下命令
+- For the first time, install dependencies by running the following command:
 
 ```bash
-# 安装依赖
+# Install dependencies
 pnpm i
-# 生成本库的dist，安装 examples 依赖
+# Generate the dist directory for this library and install the dependencies for examples
 pnpm bootstrap
 ```

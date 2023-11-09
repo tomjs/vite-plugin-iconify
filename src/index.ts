@@ -4,14 +4,14 @@ import path from 'node:path';
 import fs from 'fs-extra';
 import _ from 'lodash';
 import { parse as htmlParser } from 'node-html-parser';
-import { urlContact } from './utils';
+import { urlConcat } from './utils';
 
 export * from './types';
 
 const PKG_NAME = '@iconify/json';
 
 /**
- * 获取 @iconify/json 版本
+ * Get @iconify/json version
  */
 function getIconifyInfo() {
   const pwd = process.cwd();
@@ -58,7 +58,6 @@ function preHandleOptions(options?: IconifyOptions): PreHandleOptions {
 
   const { local } = opts;
   const pkgInfo = getIconifyInfo();
-  console.log(pkgInfo);
 
   opts.version = pkgInfo?.version;
 
@@ -87,6 +86,7 @@ function preHandleOptions(options?: IconifyOptions): PreHandleOptions {
   }
 
   localOpts.path = localOpts.path || 'npm/@iconify/json@{version}';
+  localOpts.copy = localOpts.copy ?? true;
 
   opts.local = localOpts;
 
@@ -103,7 +103,7 @@ function getUrlPath(url, version?: string): string {
 }
 
 /**
- * iconify 图集插件
+ * Iconify icon sets plugin
  */
 export function useIconifyPlugin(options?: IconifyOptions): PluginOption {
   const opts = preHandleOptions(options);
@@ -131,7 +131,7 @@ export function useIconifyPlugin(options?: IconifyOptions): PluginOption {
       let urls = opts.resources || [];
       if (Array.isArray(sets) && sets.length > 0) {
         const baseUrl = opts.local.base || userConfig?.base || '/';
-        urls = [urlContact(baseUrl, opts.local.path || '')];
+        urls = [urlConcat(baseUrl, opts.local.path || '')];
       }
 
       urls = [...new Set(urls.map(s => getUrlPath(s, opts.version)).concat([DEFAULT_API]))].map(
@@ -155,12 +155,11 @@ export function useIconifyPlugin(options?: IconifyOptions): PluginOption {
     },
     closeBundle() {
       const { sets } = opts.local || {};
-      console.log(opts);
-      if (!Array.isArray(sets) || sets.length === 0) {
+      if (!opts.local.copy || !Array.isArray(sets) || sets.length === 0) {
         return;
       }
 
-      // 输出目录
+      // Output directory
       const outDir = opts.local.outDir || userConfig.build?.outDir || 'dist';
 
       const outPath = path.join(process.cwd(), outDir);

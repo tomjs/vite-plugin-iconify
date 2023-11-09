@@ -1,7 +1,7 @@
 /**
- * url 地址拼接
+ * url concat
  */
-export function urlContact(...urls: string[]) {
+export function urlConcat(...urls: string[]) {
   return urls
     .map(s => (s || '').trim())
     .filter(s => s)
