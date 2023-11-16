@@ -17,8 +17,8 @@ dependencies:
 
 devDependencies:
   '@iconify/json':
-    specifier: ^2.2.138
-    version: 2.2.138
+    specifier: ^2.2.142
+    version: 2.2.142
   '@types/react':
     specifier: ^18.2.37
     version: 18.2.37
@@ -235,8 +235,8 @@ packages:
     dev: true
     optional: true
 
-  /@iconify/json@2.2.138:
-    resolution: {integrity: sha512-Xadn4xiIiaF02VLbJwviPSNqB2pNH2NQ+mxgtM5SuYQ/U/D9Sa+hr2Jwc/YlcOWgeqIp+hIVR2YzJDtSiL3fPA==}
+  /@iconify/json@2.2.142:
+    resolution: {integrity: sha512-EfQv1GMGxOySdwaGR3+Diqudkwk4W299cNtcQhg7QAlH9x6FW9851raiYvdOsMZp0ya+Ye+evTTqxyZ4vEh5cw==}
     dependencies:
       '@iconify/types': 2.0.0
       pathe: 1.1.1

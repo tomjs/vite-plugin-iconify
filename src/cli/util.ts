@@ -1,9 +1,10 @@
 import path from 'node:path';
 import { cwd } from 'node:process';
 import fs from 'fs-extra';
+import { ROOT } from '../utils';
 import Logger from './logger';
 
-const { version } = fs.readJsonSync('../../package.json');
+const { version } = fs.readJsonSync(path.join(ROOT, 'package.json'));
 
 export const NAME = 'ti';
 
