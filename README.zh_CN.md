@@ -8,22 +8,22 @@ vite 插件，用于处理 iconify 图标集，在无法访问公网的环境下
 
 ## 安装
 
-使用 `pnpm` 安装
+使用 `pnpm`
 
 ```bash
 pnpm add @tomjs/vite-plugin-iconify -D
 ```
 
-使用 `yarn` 安装
+使用 `yarn`
 
 ```bash
 yarn add @tomjs/vite-plugin-iconify -D
 ```
 
-使用 `npm` 安装
+使用 `npm`
 
 ```bash
-npm i @tomjs/vite-plugin-iconify -D
+npm i @tomjs/vite-plugin-iconify --save-dev
 ```
 
 ## 使用说明

@@ -6,24 +6,24 @@ A Vite plugin for handling iconify icon sets in environments without internet ac
 
 **English** | [中文](./README.zh_CN.md)
 
-## Installation
+## Install
 
-Install using `pnpm`
+With `pnpm`
 
 ```bash
 pnpm add @tomjs/vite-plugin-iconify -D
 ```
 
-Install using `yarn`
+With `yarn`
 
 ```bash
 yarn add @tomjs/vite-plugin-iconify -D
 ```
 
-Install using `npm`
+With `npm`
 
 ```bash
-npm i @tomjs/vite-plugin-iconify -D
+npm i @tomjs/vite-plugin-iconify --save-dev
 ```
 
 ## Usage
