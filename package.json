@@ -1,6 +1,6 @@
 {
   "name": "@tomjs/vite-plugin-iconify",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A Vite plugin for handling iconify icon sets in environments without internet access.",
   "keywords": [
     "tomjs",
