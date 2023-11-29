@@ -1,6 +1,6 @@
 # @tomjs/vite-plugin-iconify
 
-![npm](https://img.shields.io/npm/v/%40tomjs/vite-plugin-iconify) ![NPM](https://img.shields.io/npm/l/%40tomjs%2Feslint) ![npm package minimized gzipped size (scoped version select exports)](https://img.shields.io/bundlejs/size/%40tomjs/vite-plugin-iconify)
+![npm](https://img.shields.io/npm/v/%40tomjs/vite-plugin-iconify) ![node-current (scoped)](https://img.shields.io/node/v/%40tomjs/vite-plugin-iconify) ![NPM](https://img.shields.io/npm/l/%40tomjs%2Fvite-plugin-iconify)
 
 A Vite plugin for handling iconify icon sets in environments without internet access.
 

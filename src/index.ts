@@ -1,10 +1,10 @@
 import type { PluginOption, UserConfig } from 'vite';
 import type { IconifyLocal, IconifyOptions as IconifyOptions, IconifySet } from './types';
+import fs from 'node:fs';
 import path from 'node:path';
-import fs from 'fs-extra';
 import _ from 'lodash';
 import { parse as htmlParser } from 'node-html-parser';
-import { urlConcat } from './utils';
+import { mkdirpSync, urlConcat } from './utils';
 
 export * from './types';
 
@@ -164,15 +164,17 @@ export function useIconifyPlugin(options?: IconifyOptions): PluginOption {
 
       const outPath = path.join(process.cwd(), outDir);
       if (!fs.existsSync(outPath)) {
-        fs.mkdirpSync(outPath);
+        mkdirpSync(outPath);
       }
 
       const srcFolder = path.join(process.cwd(), 'node_modules', PKG_NAME, 'json');
       const destFolder = path.join(outPath, getUrlPath(opts.local.path || '', opts.version));
 
+      mkdirpSync(destFolder);
+
       sets.forEach(s => {
         const name = `${s}.json`;
-        fs.copySync(path.join(srcFolder, name), path.join(destFolder, name));
+        fs.copyFileSync(path.join(srcFolder, name), path.join(destFolder, name));
       });
     },
   } as PluginOption;

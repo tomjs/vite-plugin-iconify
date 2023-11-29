@@ -1,6 +1,6 @@
 # @tomjs/vite-plugin-iconify
 
-![npm](https://img.shields.io/npm/v/%40tomjs/vite-plugin-iconify) ![NPM](https://img.shields.io/npm/l/%40tomjs%2Feslint) ![npm package minimized gzipped size (scoped version select exports)](https://img.shields.io/bundlejs/size/%40tomjs/vite-plugin-iconify)
+![npm](https://img.shields.io/npm/v/%40tomjs/vite-plugin-iconify) ![node-current (scoped)](https://img.shields.io/node/v/%40tomjs/vite-plugin-iconify) ![NPM](https://img.shields.io/npm/l/%40tomjs%2Fvite-plugin-iconify)
 
 vite 插件，用于处理 iconify 图标集，在无法访问公网的环境下使用
 

@@ -61,30 +61,31 @@
   },
   "dependencies": {
     "cac": "^6.7.14",
-    "fs-extra": "^11.1.1",
     "lodash": "^4.17.21",
     "node-html-parser": "^6.1.11",
     "picocolors": "^1.0.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "^18.2.0",
-    "@tomjs/commitlint": "^1.0.4",
-    "@tomjs/eslint": "^1.0.4",
-    "@tomjs/prettier": "^1.0.2",
-    "@tomjs/stylelint": "^1.0.2",
-    "@tomjs/tsconfig": "^1.0.4",
-    "@types/fs-extra": "^11.0.4",
-    "@types/node": "^16.18.61",
-    "eslint": "^8.52.0",
+    "@commitlint/cli": "^18.4.3",
+    "@tomjs/commitlint": "^2.0.3",
+    "@tomjs/eslint": "^1.0.8",
+    "@tomjs/prettier": "^1.0.5",
+    "@tomjs/stylelint": "^1.0.6",
+    "@tomjs/tsconfig": "^1.0.7",
+    "@types/node": "^18.18.13",
+    "eslint": "^8.54.0",
     "husky": "^8.0.3",
-    "lint-staged": "^15.0.2",
-    "np": "^8.0.4",
+    "lint-staged": "^15.1.0",
+    "np": "^9.0.0",
     "npm-run-all": "^4.1.5",
-    "prettier": "^3.0.3",
+    "prettier": "^3.1.0",
     "rimraf": "^5.0.5",
     "stylelint": "^15.11.0",
-    "tsup": "^7.2.0",
+    "tsup": "^8.0.1",
     "typescript": "^5.2.2",
-    "vite": "^4.5.0"
+    "vite": "^5.0.4"
+  },
+  "peerDependencies": {
+    "vite": ">=2"
   }
 }
