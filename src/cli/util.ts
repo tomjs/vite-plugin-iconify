@@ -1,10 +1,10 @@
-import fs from 'node:fs';
 import path from 'node:path';
 import { cwd } from 'node:process';
-import { mkdirpSync, readJsonSync, ROOT } from '../utils';
+import fs from 'fs-extra';
+import { ROOT } from '../utils';
 import Logger from './logger';
 
-const { version } = readJsonSync(path.join(ROOT, 'package.json'));
+const { version } = fs.readJsonSync(path.join(ROOT, 'package.json'));
 
 export const NAME = 'ti';
 
@@ -53,7 +53,7 @@ export function createIconDataFile(sets: string[], options: IconifyDataOptions) 
 
   const outDir = path.join(cwd(), opts.path);
   if (!fs.existsSync(outDir)) {
-    mkdirpSync(outDir);
+    fs.mkdirpSync(outDir);
   }
 
   const list: any[] = [];
@@ -64,7 +64,7 @@ export function createIconDataFile(sets: string[], options: IconifyDataOptions) 
       return;
     }
 
-    const { prefix, info, icons } = readJsonSync(jsonFile);
+    const { prefix, info, icons } = fs.readJsonSync(jsonFile);
 
     list.push({
       prefix,

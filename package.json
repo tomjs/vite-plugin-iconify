@@ -44,7 +44,7 @@
     "ti": "./dist/cli.mjs"
   },
   "scripts": {
-    "build": "npm run clean && tsup --minify",
+    "build": "npm run clean && tsup",
     "clean": "rimraf ./dist",
     "lint": "run-s lint:eslint lint:stylelint lint:prettier",
     "lint:eslint": "eslint \"{src,examples}/**/*.{ts,tsx,vue}\" *.{js,cjs,ts} --fix --cache",
@@ -61,6 +61,7 @@
   },
   "dependencies": {
     "cac": "^6.7.14",
+    "fs-extra": "^11.2.0",
     "lodash": "^4.17.21",
     "node-html-parser": "^6.1.11",
     "picocolors": "^1.0.0"
@@ -72,6 +73,7 @@
     "@tomjs/prettier": "^1.0.5",
     "@tomjs/stylelint": "^1.0.6",
     "@tomjs/tsconfig": "^1.0.7",
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^18.18.13",
     "eslint": "^8.54.0",
     "husky": "^8.0.3",
