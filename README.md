@@ -2,9 +2,9 @@
 
 [![npm](https://img.shields.io/npm/v/@tomjs/vite-plugin-iconify)](https://www.npmjs.com/package/@tomjs/vite-plugin-iconify) ![node-current (scoped)](https://img.shields.io/node/v/@tomjs/vite-plugin-iconify) ![NPM](https://img.shields.io/npm/l/@tomjs/vite-plugin-iconify) [![Docs](https://www.paka.dev/badges/v0/cute.svg)](https://www.paka.dev/npm/@tomjs/vite-plugin-iconify)
 
-> A Vite plugin for handling iconify icon sets in environments without internet access.
-
 **English** | [中文](./README.zh_CN.md)
+
+> A Vite plugin for handling iconify icon sets in environments without internet access.
 
 ## Install
 
