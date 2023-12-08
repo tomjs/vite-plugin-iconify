@@ -1,8 +1,8 @@
 # @tomjs/vite-plugin-iconify
 
-![npm](https://img.shields.io/npm/v/%40tomjs/vite-plugin-iconify) ![node-current (scoped)](https://img.shields.io/node/v/%40tomjs/vite-plugin-iconify) ![NPM](https://img.shields.io/npm/l/%40tomjs%2Fvite-plugin-iconify)
+[![npm](https://img.shields.io/npm/v/@tomjs/vite-plugin-iconify)](https://www.npmjs.com/package/@tomjs/vite-plugin-iconify) ![node-current (scoped)](https://img.shields.io/node/v/@tomjs/vite-plugin-iconify) ![NPM](https://img.shields.io/npm/l/@tomjs/vite-plugin-iconify) [![Docs](https://www.paka.dev/badges/v0/cute.svg)](https://www.paka.dev/npm/@tomjs/vite-plugin-iconify)
 
-vite 插件，用于处理 iconify 图标集，在无法访问公网的环境下使用
+> vite 插件，用于处理 iconify 图标集，在无法访问公网的环境下使用
 
 [English](./README.md) | **中文**
 
@@ -70,9 +70,12 @@ export default defineConfig({
 });
 ```
 
-#### API 参数
+#### 文档
 
-你可以访问 [paka.dev](https://paka.dev) 提供的 [API文档](https://paka.dev/npm/@tomjs/vite-plugin-iconify).
+- [paka.dev](https://paka.dev) 提供的 [API文档](https://paka.dev/npm/@tomjs/vite-plugin-iconify).
+- [unpkg.com](https://www.unpkg.com/) 提供的 [index.d.ts](https://www.unpkg.com/browse/@tomjs/vite-plugin-iconify/dist/index.d.ts).
+
+#### 参数
 
 | 参数名 | 类型 | 默认值 | 说明 |
 | --- | --- | --- | --- |

@@ -1,6 +1,5 @@
 /**
- * iconify icon sets
- * @see https://icones.js.org
+ * iconify icon sets, visit https://icones.js.org to preview them.
  */
 export type IconifySet =
   | 'academicons'
@@ -184,12 +183,11 @@ export type IconifySet =
  */
 export interface IconifyLocal {
   /**
-   * Iconify icon sets
-   * @see https://icones.js.org
+   * Iconify icon sets, visit https://icones.js.org to preview them.
    */
   sets: IconifySet[];
   /**
-   * Same as Vite configuration base option
+   * Same as Vite configuration base option. Default is "/".
    * @default "/"
    */
   base?: string;
@@ -199,12 +197,12 @@ export interface IconifyLocal {
    */
   outDir?: string;
   /**
-   * Local output path, module URLs will also be replaced with this path
+   * Local output path, module URLs will also be replaced with this path. Default is "npm/@iconify/json@{version}"
    * @default "npm/@iconify/json@{version}"
    */
   path?: string;
   /**
-   * Whether to copy the icon to the local device
+   * Whether to copy the icon to the local device. Default is true
    * @default true
    */
   copy?: boolean;
@@ -215,17 +213,17 @@ export interface IconifyLocal {
  */
 export interface IconifyOptions {
   /**
-   * Selector for the tag to inject IconifyProviders script after
+   * Selector for the tag to inject IconifyProviders script after. Default is "title"
    * @default "title"
    */
   selector?: string;
   /**
-   * Icon API URLs
+   * Icon API URLs. Default is ["https://api.iconify.design"]
    * @default ["https://api.iconify.design"]
    */
   resources?: string[];
   /**
-   * Timeout before using next host, in milliseconds
+   * Timeout before using next host, in milliseconds. Default is 750
    * @default 750
    */
   rotate?: number;
@@ -235,7 +233,7 @@ export interface IconifyOptions {
    */
   timeout?: number;
   /**
-   * Local icon set configuration
+   * Local icon set configuration. Default is false
    * @default false
    */
   local?: boolean | IconifySet[] | IconifyLocal;
