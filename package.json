@@ -3,11 +3,10 @@
   "version": "1.0.6",
   "description": "A Vite plugin for handling iconify icon sets in environments without internet access.",
   "keywords": [
-    "tomjs",
-    "front-end",
     "vite",
     "plugin",
     "vite-plugin",
+    "front-end",
     "vue",
     "react",
     "html",
@@ -45,7 +44,7 @@
   },
   "scripts": {
     "dev": "tsup",
-    "build": "npm run clean && tsup --minify",
+    "build": "npm run clean && tsup",
     "clean": "rimraf ./dist",
     "lint": "run-s lint:eslint lint:stylelint lint:prettier",
     "lint:eslint": "eslint \"{src,examples}/**/*.{js,cjs,ts,tsx,vue}\" *.{js,cjs,ts} --fix --cache",
