@@ -15,11 +15,12 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.149",
-    "@types/react": "^18.2.39",
+    "@iconify/json": "^2.2.153",
+    "@tomjs/vite-plugin-iconify": "workspace:^",
+    "@types/react": "^18.2.42",
     "@types/react-dom": "^18.2.17",
     "@vitejs/plugin-react-swc": "^3.5.0",
-    "typescript": "^5.2.2",
-    "vite": "^5.0.4"
+    "typescript": "^5.3.3",
+    "vite": "^5.0.6"
   }
 }

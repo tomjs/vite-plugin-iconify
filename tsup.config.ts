@@ -14,6 +14,7 @@ export default defineConfig([
     format: ['esm'],
     target: ['es2021', 'node16'],
     clean: false,
+    dts: false,
     splitting: true,
   },
 ]);

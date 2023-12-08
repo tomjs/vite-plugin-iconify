@@ -70,9 +70,11 @@ export default defineConfig({
 });
 ```
 
-#### Options
+#### API Options
 
-| Option | Type | Default | Description |
+You Visit The [API Document](https://paka.dev/npm/@tomjs/vite-plugin-iconify) Power by [paka.dev](https://paka.dev).
+
+| Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
 | selector | `string` | 'title' | The tag selector to inject the IconifyProviders script after |
 | resources | `string[]` | [] | Icon API URLs, default includes https://api.iconify.design |
@@ -88,7 +90,7 @@ Iconify icon set, refer to [icon sets](https://icon-sets.iconify.design/) or [Ic
 
 By configuring this parameter, the local icon set will be copied to the `outDir` directory based on the `sets` configuration.
 
-| Option | Type | Default | Description |
+| Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
 | **sets** | `IconifySet[]` | [] | Iconify icon sets |
 | base | `string` | '/' | Same as the `base` option in Vite configuration |
@@ -133,6 +135,22 @@ Options:
 ```bash
 # Install dependencies
 pnpm i
-# Generate the dist directory for this library and install the dependencies for examples
-pnpm bootstrap
+# build library
+pnpm build
+```
+
+- To debug the `vue` project, execute the following commands:
+
+```bash
+cd examples/vue
+pnpm build
+pnpm preview
+```
+
+- To debug the `react` project, execute the following commands:
+
+```bash
+cd examples/react
+pnpm build
+pnpm preview
 ```

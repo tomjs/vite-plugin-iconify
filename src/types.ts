@@ -1,5 +1,6 @@
 /**
  * iconify icon sets
+ * @see https://icones.js.org
  */
 export type IconifySet =
   | 'academicons'
@@ -184,22 +185,27 @@ export type IconifySet =
 export interface IconifyLocal {
   /**
    * Iconify icon sets
+   * @see https://icones.js.org
    */
   sets: IconifySet[];
   /**
-   * Same as Vite configuration base option, default is '/'
+   * Same as Vite configuration base option
+   * @default "/"
    */
   base?: string;
   /**
-   * Local output directory, default is the same as Vite configuration build.outDir option, which is 'dist' by default
+   * Local output directory, default is the same as Vite configuration build.outDir option
+   * @default "dist"
    */
   outDir?: string;
   /**
-   * Local output path, module URLs will also be replaced with this path, default is npm/@iconify/json@{version}
+   * Local output path, module URLs will also be replaced with this path
+   * @default "npm/@iconify/json@{version}"
    */
   path?: string;
   /**
-   * Whether to copy the icon to the local device, with a default value of true.
+   * Whether to copy the icon to the local device
+   * @default true
    */
   copy?: boolean;
 }
@@ -209,23 +215,28 @@ export interface IconifyLocal {
  */
 export interface IconifyOptions {
   /**
-   * Selector for the tag to inject IconifyProviders script after, default is 'title'
+   * Selector for the tag to inject IconifyProviders script after
+   * @default "title"
    */
   selector?: string;
   /**
-   * Icon API URLs, default value is 'https://api.iconify.design'
+   * Icon API URLs
+   * @default ["https://api.iconify.design"]
    */
   resources?: string[];
   /**
-   * Timeout before using next host, in milliseconds, default value is 750
+   * Timeout before using next host, in milliseconds
+   * @default 750
    */
   rotate?: number;
   /**
-   * Timeout for API query to be considered as failed, in milliseconds, default value is 5000
+   * Timeout for API query to be considered as failed, in milliseconds
+   * @default 5000
    */
   timeout?: number;
   /**
-   * Local icon set configuration, default is false
+   * Local icon set configuration
+   * @default false
    */
   local?: boolean | IconifySet[] | IconifyLocal;
 }
