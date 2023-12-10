@@ -72,8 +72,8 @@ export default defineConfig({
 
 #### Documentation
 
-- [API Doc](https://paka.dev/npm/@tomjs/vite-plugin-iconify) Power by [paka.dev](https://paka.dev).
-- [index.d.ts](https://www.unpkg.com/browse/@tomjs/vite-plugin-iconify/dist/index.d.ts) Power by [unpkg.com](https://www.unpkg.com/).
+- [API Documentation](https://paka.dev/npm/@tomjs/vite-plugin-iconify) provided by [paka.dev](https://paka.dev).
+- [index.d.ts](https://www.unpkg.com/browse/@tomjs/vite-plugin-iconify/dist/index.d.ts) provided by [unpkg.com](https://www.unpkg.com).
 
 #### Parameters
 
