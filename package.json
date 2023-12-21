@@ -19,7 +19,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tomgao365/vite-plugin-iconify.git"
+    "url": "https://github.com/tomjs/vite-plugin-iconify.git"
   },
   "publishConfig": {
     "access": "public",
