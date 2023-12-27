@@ -8,22 +8,15 @@
 
 ## Install
 
-With `pnpm`
-
 ```bash
-pnpm add @tomjs/vite-plugin-iconify -D
-```
+# pnpm
+pnpm add @iconify/json @tomjs/vite-plugin-iconify -D
 
-With `yarn`
+# yarn
+yarn add @iconify/json @tomjs/vite-plugin-iconify -D
 
-```bash
-yarn add @tomjs/vite-plugin-iconify -D
-```
-
-With `npm`
-
-```bash
-npm i @tomjs/vite-plugin-iconify --save-dev
+# npm
+npm i @iconify/json @tomjs/vite-plugin-iconify --save-dev
 ```
 
 ## Usage

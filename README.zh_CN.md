@@ -8,22 +8,15 @@
 
 ## 安装
 
-使用 `pnpm`
-
 ```bash
-pnpm add @tomjs/vite-plugin-iconify -D
-```
+# pnpm
+pnpm add @iconify/json @tomjs/vite-plugin-iconify -D
 
-使用 `yarn`
+# yarn
+yarn add @iconify/json @tomjs/vite-plugin-iconify -D
 
-```bash
-yarn add @tomjs/vite-plugin-iconify -D
-```
-
-使用 `npm`
-
-```bash
-npm i @tomjs/vite-plugin-iconify --save-dev
+# npm
+npm i @iconify/json @tomjs/vite-plugin-iconify --save-dev
 ```
 
 ## 使用说明
