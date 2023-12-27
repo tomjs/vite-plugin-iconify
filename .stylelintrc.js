@@ -1,3 +1,3 @@
 module.exports = {
-  extends: [require.resolve('@tomjs/stylelint/vue')],
+  extends: [require.resolve('@tomjs/stylelint')],
 };
