@@ -2,8 +2,9 @@ import type { PluginOption, UserConfig } from 'vite';
 import type { IconifyLocal, IconifyOptions as IconifyOptions, IconifySet } from './types';
 import path from 'node:path';
 import fs from 'fs-extra';
-import _ from 'lodash';
+import cloneDeep from 'lodash.clonedeep';
 import { parse as htmlParser } from 'node-html-parser';
+import { PLUGIN_NAME } from './constants';
 import { urlConcat } from './utils';
 
 export * from './types';
@@ -48,8 +49,8 @@ type PreHandleOptions = Omit<IconifyOptions, 'local'> & {
 
 function preHandleOptions(options?: IconifyOptions): PreHandleOptions {
   const opts: PreHandleOptions = Object.assign(
-    { local: false } as IconifyOptions,
-    _.cloneDeep(options),
+    { local: false },
+    cloneDeep(options) as PreHandleOptions,
   );
 
   opts.resources = opts.resources || [];
@@ -110,7 +111,7 @@ export function useIconifyPlugin(options?: IconifyOptions): PluginOption {
   let userConfig: UserConfig = {};
 
   return {
-    name: '@tomjs/html-iconify',
+    name: PLUGIN_NAME,
     apply: 'build',
     enforce: 'post',
     config(config) {

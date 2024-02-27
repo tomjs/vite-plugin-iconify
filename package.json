@@ -58,7 +58,7 @@
   "dependencies": {
     "cac": "^6.7.14",
     "fs-extra": "^11.2.0",
-    "lodash": "^4.17.21",
+    "lodash.clonedeep": "^4.5.0",
     "node-html-parser": "^6.1.12",
     "picocolors": "^1.0.0"
   },
@@ -70,6 +70,7 @@
     "@tomjs/stylelint": "^2.1.1",
     "@tomjs/tsconfig": "^1.2.1",
     "@types/fs-extra": "^11.0.4",
+    "@types/lodash.clonedeep": "^4.5.9",
     "@types/node": "^18.19.3",
     "eslint": "^8.56.0",
     "husky": "^8.0.3",
@@ -84,7 +85,7 @@
     "vite": "^5.0.10"
   },
   "peerDependencies": {
-    "vite": ">=2",
-    "@iconify/json": "*"
+    "@iconify/json": "*",
+    "vite": ">=2"
   }
 }
