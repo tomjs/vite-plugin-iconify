@@ -218,10 +218,29 @@ export interface IconifyOptions {
    */
   selector?: string;
   /**
-   * Icon API URLs. Default is ["https://api.iconify.design"]
+   * Icon API URLs. Default is ["https://api.iconify.design"].
+   *
+   * You can add npm cdn or custom url:
+   * * npmmirror:
+   *    * https://registry.npmmirror.com/@iconify/json/{version}/files/json
+   *    * https://registry.npmmirror.com/@iconify/json/latest/files/json
+   *    * https://registry.npmmirror.com/@iconify/json/2.2.187/files/json
+   * * jsdelivr:
+   *    * https://cdn.jsdelivr.net/npm/@iconify/json@{version}/json
+   *    * https://cdn.jsdelivr.net/npm/@iconify/json/json
+   *    * https://cdn.jsdelivr.net/npm/@iconify/json@2.2.187/json
+   * * unpkg:
+   *    * https://unpkg.com/@iconify/json@{version}/json
+   *    * https://unpkg.com/@iconify/json/json
+   *    * https://unpkg.com/@iconify/json@2.2.187/json
    * @default ["https://api.iconify.design"]
    */
   resources?: string[];
+  /**
+   * Local icon set configuration. Default is false
+   * @default false
+   */
+  local?: boolean | IconifySet[] | IconifyLocal;
   /**
    * Timeout before using next host, in milliseconds. Default is 750
    * @default 750
@@ -232,9 +251,4 @@ export interface IconifyOptions {
    * @default 5000
    */
   timeout?: number;
-  /**
-   * Local icon set configuration. Default is false
-   * @default false
-   */
-  local?: boolean | IconifySet[] | IconifyLocal;
 }

@@ -78,6 +78,21 @@ export default defineConfig({
 | timeout | `number` | 5000 | Timeout in milliseconds before an API query is considered failed |
 | local | `'boolean'\|'IconifySet[]'\|IconifyLocal[]` | false | Local icon set configuration |
 
+**resources**: You can add npm cdn or custom url:
+
+- npmmirror:
+  - https://registry.npmmirror.com/@iconify/json/{version}/files/json
+  - https://registry.npmmirror.com/@iconify/json/latest/files/json
+  - https://registry.npmmirror.com/@iconify/json/2.2.187/files/json
+- jsdelivr:
+  - https://cdn.jsdelivr.net/npm/@iconify/json@{version}/json
+  - https://cdn.jsdelivr.net/npm/@iconify/json/json
+  - https://cdn.jsdelivr.net/npm/@iconify/json@2.2.187/json
+- unpkg:
+  - https://unpkg.com/@iconify/json@{version}/json
+  - https://unpkg.com/@iconify/json/json
+  - https://unpkg.com/@iconify/json@2.2.187/json
+
 ##### IconifySet
 
 Iconify icon set, refer to [icon sets](https://icon-sets.iconify.design/) or [Icônes](https://icones.js.org/)

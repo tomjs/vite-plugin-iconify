@@ -78,6 +78,21 @@ export default defineConfig({
 | timeout | `number` | 5000 | API 查询被视为失败之前的超时时间（以毫秒为单位） |
 | local | `'boolean'\|'IconifySet[]'\|IconifyLocal[]` | false | 本地图标集配置 |
 
+**resources**: 你可以添加 npm cdn 或自定义url
+
+- npmmirror:
+  - https://registry.npmmirror.com/@iconify/json/{version}/files/json
+  - https://registry.npmmirror.com/@iconify/json/latest/files/json
+  - https://registry.npmmirror.com/@iconify/json/2.2.187/files/json
+- jsdelivr:
+  - https://cdn.jsdelivr.net/npm/@iconify/json@{version}/json
+  - https://cdn.jsdelivr.net/npm/@iconify/json/json
+  - https://cdn.jsdelivr.net/npm/@iconify/json@2.2.187/json
+- unpkg:
+  - https://unpkg.com/@iconify/json@{version}/json
+  - https://unpkg.com/@iconify/json/json
+  - https://unpkg.com/@iconify/json@2.2.187/json
+
 ##### IconifySet
 
 iconify 图标集，参考 [icon sets](https://icon-sets.iconify.design/) 或 [Icônes](https://icones.js.org/)
