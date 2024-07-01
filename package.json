@@ -34,9 +34,14 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": {
+        "default": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      },
+      "import": {
+        "default": "./dist/index.mjs",
+        "types": "./dist/index.d.mts"
+      }
     }
   },
   "bin": {
@@ -50,7 +55,7 @@
     "lint:stylelint": "stylelint \"examples/**/*.{vue,css,less,html}\" --fix --cache",
     "lint:prettier": "prettier --write \"{src,examples}/**/*.{js,cjs,ts,tsx,json,md,html}\" *.{js,cjs,ts,json,md}",
     "prepare": "husky install",
-    "prepublishOnly": "npm run build && np --any-branch --no-yarn --yolo --no-publish --message \"chore: release v%s\""
+    "prepublishOnly": "pnpm build"
   },
   "engines": {
     "node": ">=16"
@@ -87,5 +92,6 @@
   "peerDependencies": {
     "@iconify/json": "*",
     "vite": ">=2"
-  }
+  },
+  "packageManager": "pnpm@8.15.8"
 }
