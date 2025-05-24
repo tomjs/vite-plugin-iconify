@@ -1,2 +1,7 @@
 packages:
- - 'examples/*'
+  - examples/*
+onlyBuiltDependencies:
+  - '@swc/core'
+  - esbuild
+  - simple-git-hooks
+  - unrs-resolver

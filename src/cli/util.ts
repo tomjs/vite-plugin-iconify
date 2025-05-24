@@ -39,8 +39,8 @@ export function createIconDataFile(sets: string[], options: IconifyDataOptions) 
 
   opts.type = opts.type || 'esm';
   opts.path = opts.path || 'src';
-  opts.name =
-    opts.name || fs.existsSync(path.join(cwd(), 'tsconfig.json')) ? 'iconify.ts' : 'iconify.js';
+  opts.name
+    = opts.name || (fs.existsSync(path.join(cwd(), 'tsconfig.json')) ? 'iconify.ts' : 'iconify.js');
 
   // Read files in the json directory in the @iconify/json package in the node_modules directory
   const npmDir = path.join(cwd(), 'node_modules', '@iconify', 'json');
@@ -56,7 +56,7 @@ export function createIconDataFile(sets: string[], options: IconifyDataOptions) 
   }
 
   const list: any[] = [];
-  sets.forEach(set => {
+  sets.forEach((set) => {
     const jsonFile = path.join(jsonDir, `${set}.json`);
     if (!fs.existsSync(jsonFile)) {
       logger.warn(`icon set ${set} not found, please check whether it is correct`);

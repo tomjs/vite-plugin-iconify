@@ -28,9 +28,9 @@ npm i @iconify/json @tomjs/vite-plugin-iconify --save-dev
 #### vue示例
 
 ```js
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
 import iconify from '@tomjs/vite-plugin-iconify';
+import vue from '@vitejs/plugin-vue';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [
@@ -47,9 +47,9 @@ export default defineConfig({
 #### react示例
 
 ```js
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react-swc';
 import iconify from '@tomjs/vite-plugin-iconify';
+import react from '@vitejs/plugin-react-swc';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [
@@ -69,13 +69,13 @@ export default defineConfig({
 
 #### 参数
 
-| 参数名 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
-| selector | `string` | 'title' | 标签选择器，注入IconifyProviders脚本添加在指定的标签后面 |
-| resources | `string[]` | [] | 图标 API 地址，默认带上 https://api.iconify.design |
-| rotate | `number` | 750 | 使用下一个主机之前的超时时间（以毫秒为单位） |
-| timeout | `number` | 5000 | API 查询被视为失败之前的超时时间（以毫秒为单位） |
-| local | `'boolean'\|'IconifySet[]'\|IconifyLocal[]` | false | 本地图标集配置 |
+| 参数名    | 类型                                        | 默认值  | 说明                                                     |
+| --------- | ------------------------------------------- | ------- | -------------------------------------------------------- |
+| selector  | `string`                                    | 'title' | 标签选择器，注入IconifyProviders脚本添加在指定的标签后面 |
+| resources | `string[]`                                  | []      | 图标 API 地址，默认带上 https://api.iconify.design       |
+| rotate    | `number`                                    | 750     | 使用下一个主机之前的超时时间（以毫秒为单位）             |
+| timeout   | `number`                                    | 5000    | API 查询被视为失败之前的超时时间（以毫秒为单位）         |
+| local     | `'boolean'\|'IconifySet[]'\|IconifyLocal[]` | false   | 本地图标集配置                                           |
 
 **resources**: 你可以添加 npm cdn 或自定义url
 
@@ -100,12 +100,12 @@ iconify 图标集，参考 [icon sets](https://icon-sets.iconify.design/) 或 [I
 
 配置该参数，会根据 `sets` 配置，将本地图标集复制到 `outDir` 目录下
 
-| 参数名 | 类型 | 默认值 | 说明 |
-| --- | --- | --- | --- |
-| **sets** | `IconifySet[]` | [] | iconify 图标集 |
-| base | `string` | '/' | 同 vite 配置 base 选项 |
-| outDir | `string` | 'dist' | 本地输出目录, 默认同 vite 配置 build.outDir 选项 |
-| path | `string` | 'npm/@iconify/json@{version}' | 本地输出路径，对应模块url也会替换为该路径 |
+| 参数名   | 类型           | 默认值                        | 说明                                             |
+| -------- | -------------- | ----------------------------- | ------------------------------------------------ |
+| **sets** | `IconifySet[]` | []                            | iconify 图标集                                   |
+| base     | `string`       | '/'                           | 同 vite 配置 base 选项                           |
+| outDir   | `string`       | 'dist'                        | 本地输出目录, 默认同 vite 配置 build.outDir 选项 |
+| path     | `string`       | 'npm/@iconify/json@{version}' | 本地输出路径，对应模块url也会替换为该路径        |
 
 ### 使用cli
 

@@ -1,5 +1,5 @@
 import type { PluginOption, UserConfig } from 'vite';
-import type { IconifyLocal, IconifyOptions as IconifyOptions, IconifySet } from './types';
+import type { IconifyLocal, IconifyOptions, IconifySet } from './types';
 import path from 'node:path';
 import fs from 'fs-extra';
 import cloneDeep from 'lodash.clonedeep';
@@ -70,12 +70,15 @@ function preHandleOptions(options?: IconifyOptions): PreHandleOptions {
     if (local) {
       checkInstallPkg(pkgInfo);
       localOpts.sets = (pkgInfo?.sets || []) as IconifySet[];
-    } else {
+    }
+    else {
       localOpts.sets = [];
     }
-  } else if (Array.isArray(local)) {
+  }
+  else if (Array.isArray(local)) {
     localOpts.sets = local as IconifySet[];
-  } else {
+  }
+  else {
     Object.assign(localOpts, local);
   }
 
@@ -98,8 +101,9 @@ function getUrlPath(url, version?: string): string {
   const dest = url || '';
   if (version) {
     return dest.replace('{version}', version);
-  } else {
-    return dest.replace(/[/@]{version}/g, '');
+  }
+  else {
+    return dest.replace(/[/@]\{version\}/g, '');
   }
 }
 
@@ -171,7 +175,7 @@ export function useIconifyPlugin(options?: IconifyOptions): PluginOption {
       const srcFolder = path.join(process.cwd(), 'node_modules', PKG_NAME, 'json');
       const destFolder = path.join(outPath, getUrlPath(opts.local.path || '', opts.version));
 
-      sets.forEach(s => {
+      sets.forEach((s) => {
         const name = `${s}.json`;
         fs.copySync(path.join(srcFolder, name), path.join(destFolder, name));
       });

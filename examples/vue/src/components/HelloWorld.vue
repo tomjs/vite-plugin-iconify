@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { PlusOutlined } from '@ant-design/icons-vue';
 import { Icon } from '@iconify/vue';
+import { Button } from 'ant-design-vue';
+import { ref } from 'vue';
 
 defineProps<{ msg: string }>();
 
@@ -11,10 +13,18 @@ const count = ref(0);
   <h1>{{ msg }}</h1>
 
   <div class="card">
-    <button type="button" @click="count++">
-      <Icon icon="ant-design:plus-outlined" />
-      count is {{ count }}
-    </button>
+    <p>
+      <Button type="primary" @click="count++">
+        <Icon icon="ant-design:plus-outlined" />
+        count is {{ count }}
+      </Button>
+    </p>
+    <p>
+      <Button type="primary" @click="count++">
+        <PlusOutlined />
+        count is {{ count }}
+      </Button>
+    </p>
   </div>
 </template>
 

@@ -1,170 +1,7 @@
 /**
  * iconify icon sets, visit https://icones.js.org to preview them.
  */
-export type IconifySet =
-  | 'academicons'
-  | 'akar-icons'
-  | 'ant-design'
-  | 'arcticons'
-  | 'basil'
-  | 'bi'
-  | 'bpmn'
-  | 'brandico'
-  | 'bx'
-  | 'bxl'
-  | 'bxs'
-  | 'bytesize'
-  | 'carbon'
-  | 'charm'
-  | 'ci'
-  | 'cib'
-  | 'cif'
-  | 'cil'
-  | 'circle-flags'
-  | 'circum'
-  | 'clarity'
-  | 'codicon'
-  | 'covid'
-  | 'cryptocurrency-color'
-  | 'cryptocurrency'
-  | 'dashicons'
-  | 'devicon-line'
-  | 'devicon-original'
-  | 'devicon-plain'
-  | 'devicon'
-  | 'ei'
-  | 'el'
-  | 'emblemicons'
-  | 'emojione-monotone'
-  | 'emojione-v1'
-  | 'emojione'
-  | 'entypo-social'
-  | 'entypo'
-  | 'eos-icons'
-  | 'ep'
-  | 'et'
-  | 'eva'
-  | 'fa-brands'
-  | 'fa-regular'
-  | 'fa-solid'
-  | 'fa'
-  | 'fa6-brands'
-  | 'fa6-regular'
-  | 'fa6-solid'
-  | 'fad'
-  | 'fe'
-  | 'feather'
-  | 'file-icons'
-  | 'flag'
-  | 'flagpack'
-  | 'flat-color-icons'
-  | 'flat-ui'
-  | 'fluent-emoji-flat'
-  | 'fluent-emoji-high-contrast'
-  | 'fluent-emoji'
-  | 'fluent-mdl2'
-  | 'fluent'
-  | 'fontelico'
-  | 'fontisto'
-  | 'formkit'
-  | 'foundation'
-  | 'fxemoji'
-  | 'gala'
-  | 'game-icons'
-  | 'geo'
-  | 'gg'
-  | 'gis'
-  | 'gridicons'
-  | 'grommet-icons'
-  | 'guidance'
-  | 'healthicons'
-  | 'heroicons-outline'
-  | 'heroicons-solid'
-  | 'heroicons'
-  | 'humbleicons'
-  | 'ic'
-  | 'icomoon-free'
-  | 'icon-park-outline'
-  | 'icon-park-solid'
-  | 'icon-park-twotone'
-  | 'icon-park'
-  | 'iconamoon'
-  | 'iconoir'
-  | 'icons8'
-  | 'il'
-  | 'ion'
-  | 'iwwa'
-  | 'jam'
-  | 'la'
-  | 'line-md'
-  | 'logos'
-  | 'ls'
-  | 'lucide'
-  | 'majesticons'
-  | 'maki'
-  | 'map'
-  | 'material-symbols-light'
-  | 'material-symbols'
-  | 'mdi-light'
-  | 'mdi'
-  | 'medical-icon'
-  | 'memory'
-  | 'meteocons'
-  | 'mi'
-  | 'mingcute'
-  | 'mono-icons'
-  | 'mynaui'
-  | 'nimbus'
-  | 'nonicons'
-  | 'noto-v1'
-  | 'noto'
-  | 'octicon'
-  | 'oi'
-  | 'ooui'
-  | 'openmoji'
-  | 'pajamas'
-  | 'pepicons-pencil'
-  | 'pepicons-pop'
-  | 'pepicons-print'
-  | 'pepicons'
-  | 'ph'
-  | 'pixelarticons'
-  | 'prime'
-  | 'ps'
-  | 'quill'
-  | 'radix-icons'
-  | 'raphael'
-  | 'ri'
-  | 'si-glyph'
-  | 'simple-icons'
-  | 'simple-line-icons'
-  | 'skill-icons'
-  | 'solar'
-  | 'streamline-emojis'
-  | 'streamline'
-  | 'subway'
-  | 'svg-spinners'
-  | 'system-uicons'
-  | 'tabler'
-  | 'tdesign'
-  | 'teenyicons'
-  | 'topcoat'
-  | 'twemoji'
-  | 'typcn'
-  | 'uil'
-  | 'uim'
-  | 'uis'
-  | 'uit'
-  | 'uiw'
-  | 'vaadin'
-  | 'vs'
-  | 'vscode-icons'
-  | 'websymbol'
-  | 'whh'
-  | 'wi'
-  | 'wpf'
-  | 'zmdi'
-  | 'zondicons';
+export type IconifySet = 'academicons' | 'akar-icons' | 'ant-design' | 'arcticons' | 'aws' | 'basil' | 'bi' | 'bitcoin-icons' | 'bpmn' | 'brandico' | 'bubbles' | 'bx' | 'bxl' | 'bxs' | 'bytesize' | 'carbon' | 'catppuccin' | 'cbi' | 'charm' | 'ci' | 'cib' | 'cif' | 'cil' | 'circle-flags' | 'circum' | 'clarity' | 'codex' | 'codicon' | 'covid' | 'cryptocurrency-color' | 'cryptocurrency' | 'cuida' | 'dashicons' | 'devicon-line' | 'devicon-original' | 'devicon-plain' | 'devicon' | 'duo-icons' | 'ei' | 'el' | 'emblemicons' | 'emojione-monotone' | 'emojione-v1' | 'emojione' | 'entypo-social' | 'entypo' | 'eos-icons' | 'ep' | 'et' | 'eva' | 'f7' | 'fa-brands' | 'fa-regular' | 'fa-solid' | 'fa' | 'fa6-brands' | 'fa6-regular' | 'fa6-solid' | 'fad' | 'famicons' | 'fe' | 'feather' | 'file-icons' | 'flag' | 'flagpack' | 'flat-color-icons' | 'flat-ui' | 'flowbite' | 'fluent-color' | 'fluent-emoji-flat' | 'fluent-emoji-high-contrast' | 'fluent-emoji' | 'fluent-mdl2' | 'fluent' | 'fontelico' | 'fontisto' | 'formkit' | 'foundation' | 'fxemoji' | 'gala' | 'game-icons' | 'garden' | 'geo' | 'gg' | 'gis' | 'gravity-ui' | 'gridicons' | 'grommet-icons' | 'guidance' | 'healthicons' | 'heroicons-outline' | 'heroicons-solid' | 'heroicons' | 'hugeicons' | 'humbleicons' | 'ic' | 'icomoon-free' | 'icon-park-outline' | 'icon-park-solid' | 'icon-park-twotone' | 'icon-park' | 'iconamoon' | 'iconoir' | 'icons8' | 'il' | 'ion' | 'iwwa' | 'ix' | 'jam' | 'la' | 'lets-icons' | 'line-md' | 'lineicons' | 'logos' | 'ls' | 'lsicon' | 'lucide-lab' | 'lucide' | 'mage' | 'majesticons' | 'maki' | 'map' | 'marketeq' | 'material-icon-theme' | 'material-symbols-light' | 'material-symbols' | 'mdi-light' | 'mdi' | 'medical-icon' | 'memory' | 'meteocons' | 'meteor-icons' | 'mi' | 'mingcute' | 'mono-icons' | 'mynaui' | 'nimbus' | 'nonicons' | 'noto-v1' | 'noto' | 'nrk' | 'octicon' | 'oi' | 'ooui' | 'openmoji' | 'oui' | 'pajamas' | 'pepicons-pencil' | 'pepicons-pop' | 'pepicons-print' | 'pepicons' | 'ph' | 'picon' | 'pixel' | 'pixelarticons' | 'prime' | 'proicons' | 'ps' | 'qlementine-icons' | 'quill' | 'radix-icons' | 'raphael' | 'ri' | 'rivet-icons' | 'si-glyph' | 'si' | 'simple-icons' | 'simple-line-icons' | 'skill-icons' | 'solar' | 'stash' | 'streamline-emojis' | 'streamline' | 'subway' | 'svg-spinners' | 'system-uicons' | 'tabler' | 'tdesign' | 'teenyicons' | 'token-branded' | 'token' | 'topcoat' | 'twemoji' | 'typcn' | 'uil' | 'uim' | 'uis' | 'uit' | 'uiw' | 'unjs' | 'vaadin' | 'vs' | 'vscode-icons' | 'websymbol' | 'weui' | 'whh' | 'wi' | 'wpf' | 'zmdi' | 'zondicons';
 
 // get from https://www.npmjs.com/package/@iconify/json?activeTab=code
 
@@ -221,18 +58,18 @@ export interface IconifyOptions {
    * Icon API URLs. Default is ["https://api.iconify.design"].
    *
    * You can add npm cdn or custom url:
-   * * npmmirror:
-   *    * https://registry.npmmirror.com/@iconify/json/{version}/files/json
-   *    * https://registry.npmmirror.com/@iconify/json/latest/files/json
-   *    * https://registry.npmmirror.com/@iconify/json/2.2.187/files/json
-   * * jsdelivr:
-   *    * https://cdn.jsdelivr.net/npm/@iconify/json@{version}/json
-   *    * https://cdn.jsdelivr.net/npm/@iconify/json/json
-   *    * https://cdn.jsdelivr.net/npm/@iconify/json@2.2.187/json
-   * * unpkg:
-   *    * https://unpkg.com/@iconify/json@{version}/json
-   *    * https://unpkg.com/@iconify/json/json
-   *    * https://unpkg.com/@iconify/json@2.2.187/json
+   * npmmirror:
+   *    https://registry.npmmirror.com/@iconify/json/{version}/files/json
+   *    https://registry.npmmirror.com/@iconify/json/latest/files/json
+   *    https://registry.npmmirror.com/@iconify/json/2.2.187/files/json
+   * jsdelivr:
+   *    https://cdn.jsdelivr.net/npm/@iconify/json@{version}/json
+   *    https://cdn.jsdelivr.net/npm/@iconify/json/json
+   *    https://cdn.jsdelivr.net/npm/@iconify/json@2.2.187/json
+   * unpkg:
+   *    https://unpkg.com/@iconify/json@{version}/json
+   *    https://unpkg.com/@iconify/json/json
+   *    https://unpkg.com/@iconify/json@2.2.187/json
    * @default ["https://api.iconify.design"]
    */
   resources?: string[];

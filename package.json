@@ -1,7 +1,17 @@
 {
   "name": "@tomjs/vite-plugin-iconify",
   "version": "1.2.1",
+  "packageManager": "pnpm@10.11.0",
   "description": "A Vite plugin for handling iconify icon sets in environments without internet access.",
+  "author": {
+    "name": "tom",
+    "email": "tom@tomgao.cc"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomjs/vite-plugin-iconify.git"
+  },
   "keywords": [
     "vite",
     "plugin",
@@ -12,86 +22,73 @@
     "html",
     "iconify"
   ],
-  "author": {
-    "name": "tom",
-    "email": "tom@tomgao.cc"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tomjs/vite-plugin-iconify.git"
-  },
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
-  "files": [
-    "dist",
-    "*.md"
-  ],
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "require": {
-        "default": "./dist/index.js",
-        "types": "./dist/index.d.ts"
-      },
       "import": {
-        "default": "./dist/index.mjs",
-        "types": "./dist/index.d.mts"
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
       }
     }
   },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "bin": {
     "ti": "./dist/cli.mjs"
+  },
+  "files": [
+    "*.md",
+    "dist"
+  ],
+  "engines": {
+    "node": ">=16"
   },
   "scripts": {
     "dev": "tsup",
     "build": "tsup",
-    "lint": "run-s lint:eslint lint:stylelint lint:prettier",
-    "lint:eslint": "eslint \"{src,examples}/**/*.{js,cjs,ts,tsx,vue}\" *.{js,cjs,ts} --fix --cache",
+    "lint": "run-s lint:stylelint lint:eslint",
     "lint:stylelint": "stylelint \"examples/**/*.{vue,css,less,html}\" --fix --cache",
-    "lint:prettier": "prettier --write \"{src,examples}/**/*.{js,cjs,ts,tsx,json,md,html}\" *.{js,cjs,ts,json,md}",
-    "prepare": "husky install",
+    "lint:eslint": "eslint --fix",
+    "prepare": "simple-git-hooks",
     "prepublishOnly": "pnpm build"
-  },
-  "engines": {
-    "node": ">=16"
-  },
-  "dependencies": {
-    "cac": "^6.7.14",
-    "fs-extra": "^11.2.0",
-    "lodash.clonedeep": "^4.5.0",
-    "node-html-parser": "^6.1.12",
-    "picocolors": "^1.0.0"
-  },
-  "devDependencies": {
-    "@commitlint/cli": "^18.4.3",
-    "@tomjs/commitlint": "^2.1.1",
-    "@tomjs/eslint": "^1.2.1",
-    "@tomjs/prettier": "^1.1.1",
-    "@tomjs/stylelint": "^2.1.1",
-    "@tomjs/tsconfig": "^1.2.1",
-    "@types/fs-extra": "^11.0.4",
-    "@types/lodash.clonedeep": "^4.5.9",
-    "@types/node": "^18.19.3",
-    "eslint": "^8.56.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.2.0",
-    "np": "^9.2.0",
-    "npm-run-all": "^4.1.5",
-    "prettier": "^3.1.1",
-    "rimraf": "^5.0.5",
-    "stylelint": "^16.1.0",
-    "tsup": "^8.0.1",
-    "typescript": "^5.3.3",
-    "vite": "^5.0.10"
   },
   "peerDependencies": {
     "@iconify/json": "*",
     "vite": ">=2"
   },
-  "packageManager": "pnpm@8.15.8"
+  "dependencies": {
+    "cac": "^6.7.14",
+    "fs-extra": "^11.3.0",
+    "lodash.clonedeep": "^4.5.0",
+    "node-html-parser": "^6.1.13",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@tomjs/commitlint": "^4.0.0",
+    "@tomjs/eslint": "^5.2.0",
+    "@tomjs/stylelint": "^6.0.0",
+    "@tomjs/tsconfig": "^2.0.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/lodash.clonedeep": "^4.5.9",
+    "@types/node": "^18.19.103",
+    "eslint": "^9.27.0",
+    "lint-staged": "^15.2.0",
+    "np": "^9.2.0",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^5.0.10",
+    "simple-git-hooks": "^2.13.0",
+    "stylelint": "^16.19.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.5"
+  }
 }
