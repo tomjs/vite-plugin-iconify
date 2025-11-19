@@ -1,3 +1,4 @@
+import type { IconifyAliases, IconifyIcons, IconifyJSON } from '@iconify/types';
 import type { PluginOption, UserConfig } from 'vite';
 import type { IconifyLocal, IconifyOptions, IconifySet } from './types';
 import path from 'node:path';
@@ -172,12 +173,63 @@ export function useIconifyPlugin(options?: IconifyOptions): PluginOption {
         fs.mkdirpSync(outPath);
       }
 
+      const _setsAndIcons = new Map<IconifySet, Set<string>>();
+      if (opts.local.icons?.length) {
+        opts.local.icons.forEach((icon) => {
+          const [_set, _icon] = icon.split(':') as [IconifySet, string];
+
+          if (!opts.local.sets.includes(_set)) {
+            throw new Error(`You must provide the set "${_set}" to use the icon "${icon}"`);
+          }
+
+          _setsAndIcons.set(_set, (_setsAndIcons.get(_set) || new Set()).add(_icon));
+        });
+      }
+
       const srcFolder = path.join(process.cwd(), 'node_modules', PKG_NAME, 'json');
       const destFolder = path.join(outPath, getUrlPath(opts.local.path || '', opts.version));
 
       sets.forEach((s) => {
         const name = `${s}.json`;
-        fs.copySync(path.join(srcFolder, name), path.join(destFolder, name));
+        const _icons = _setsAndIcons.get(s);
+
+        if (_icons) {
+          const setFile: IconifyJSON = fs.readJsonSync(path.join(srcFolder, name));
+
+          if (setFile.icons) {
+            const setIcons: IconifyIcons = {};
+
+            Object.keys(setFile.icons).forEach((_icon) => {
+              if (_icons.has(_icon)) {
+                setIcons[_icon] = setFile.icons[_icon];
+              }
+            });
+
+            setFile.icons = setIcons;
+          }
+
+          if (setFile.aliases) {
+            const setAliases: IconifyAliases = {};
+
+            Object.keys(setFile.aliases).forEach((_alias) => {
+              if (setFile.aliases && _icons.has(setFile.aliases[_alias].parent)) {
+                setAliases[_alias] = setFile.aliases[_alias];
+              }
+            });
+
+            setFile.aliases = setAliases;
+          }
+
+          if (setFile.info?.total) {
+            setFile.info.total = Object.keys(setFile.icons).length;
+          }
+
+          fs.mkdirSync(destFolder);
+          fs.writeJsonSync(path.join(destFolder, name), setFile);
+        }
+        else {
+          fs.copySync(path.join(srcFolder, name), path.join(destFolder, name));
+        }
       });
     },
   } as PluginOption;

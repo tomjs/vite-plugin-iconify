@@ -135,7 +135,6 @@ Options:
 ## 开发
 
 - 开发环境
-
   - git
   - node>=16
   - pnpm>=8
