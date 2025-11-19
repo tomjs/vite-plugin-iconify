@@ -39,6 +39,7 @@ export default defineConfig({
       resources: ['https://unpkg.com/@iconify/json/json'],
       rotate: 3000,
       local: ['ant-design', 'ep'],
+      icons: ['ant-design:plus-outlined'] // Optional. If set, the ant-design JSON set will include only the icons specified here. The ep set will remain complete.
     }),
   ],
 });
@@ -100,12 +101,13 @@ Iconify icon set, refer to [icon sets](https://icon-sets.iconify.design/) or [Ic
 
 By configuring this parameter, the local icon set will be copied to the `outDir` directory based on the `sets` configuration.
 
-| Parameter | Type           | Default                       | Description                                                                                    |
-| --------- | -------------- | ----------------------------- | ---------------------------------------------------------------------------------------------- |
-| **sets**  | `IconifySet[]` | []                            | Iconify icon sets                                                                              |
-| base      | `string`       | '/'                           | Same as the `base` option in Vite configuration                                                |
-| outDir    | `string`       | 'dist'                        | Local output directory, default is the same as the `build.outDir` option in Vite configuration |
-| path      | `string`       | 'npm/@iconify/json@{version}' | Local output path, the corresponding module URL will also be replaced with this path           |
+| Parameter | Type                      | Default                       | Description                                                                                    |
+| --------- | ------------------------- | ----------------------------- | ---------------------------------------------------------------------------------------------- |
+| **sets**  | `IconifySet[]`            | []                            | Iconify icon sets                                                                              |
+| icons     | `${IconifySet}:${string}` | []                            | Iconify icons list                                                                             |
+| base      | `string`                  | '/'                           | Same as the `base` option in Vite configuration                                                |
+| outDir    | `string`                  | 'dist'                        | Local output directory, default is the same as the `build.outDir` option in Vite configuration |
+| path      | `string`                  | 'npm/@iconify/json@{version}' | Local output path, the corresponding module URL will also be replaced with this path           |
 
 ### Using CLI
 
@@ -135,7 +137,6 @@ Options:
 ## Development
 
 - Development requirements:
-
   - git
   - node>=16
   - pnpm>=8

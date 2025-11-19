@@ -73,6 +73,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
+    "@iconify/types": "^2.0.0",
     "@tomjs/commitlint": "^4.0.0",
     "@tomjs/eslint": "^5.2.0",
     "@tomjs/stylelint": "^6.0.0",

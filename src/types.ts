@@ -24,6 +24,11 @@ export interface IconifyLocal {
    */
   sets: IconifySet[];
   /**
+   * Iconify icons. Preview them at https://icones.js.org.
+   * Each icon must belong to one of the provided sets.
+   */
+  icons?: `${IconifySet}:${string}`[];
+  /**
    * Same as Vite configuration base option. Default is "/".
    * @default "/"
    */
@@ -88,4 +93,11 @@ export interface IconifyOptions {
    * @default 5000
    */
   timeout?: number;
+}
+
+/**
+ * Iconify JSON Set
+ */
+export interface IconifyJsonSet {
+
 }
