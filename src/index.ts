@@ -224,7 +224,7 @@ export function useIconifyPlugin(options?: IconifyOptions): PluginOption {
             setFile.info.total = Object.keys(setFile.icons).length;
           }
 
-          fs.mkdirSync(destFolder);
+          fs.mkdirSync(destFolder, { recursive: true });
           fs.writeJsonSync(path.join(destFolder, name), setFile);
         }
         else {

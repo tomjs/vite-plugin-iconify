@@ -9,7 +9,10 @@ export default defineConfig({
     iconify({
       resources: ['https://unpkg.com/@iconify/json/json'],
       rotate: 3000,
-      local: ['ant-design', 'ep'],
+      local: {
+        sets: ['ant-design', 'ep'],
+        icons: ['ant-design:plus-outlined'],
+      },
     }),
   ],
 });
