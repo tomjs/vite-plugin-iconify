@@ -19,8 +19,30 @@ function getIconifyInfo() {
   const pwd = process.cwd();
   const modulePath = path.join(pwd, 'node_modules', PKG_NAME);
   const pkgFile = path.join(modulePath, 'package.json');
+
+  // Check if @iconify/json package is installed
   if (!fs.existsSync(pkgFile)) {
-    return;
+    // Check @iconify-json packages
+    const iconifyJsonPath = path.join(pwd, 'node_modules', '@iconify-json');
+    if (!fs.existsSync(iconifyJsonPath)) {
+      return;
+    }
+    const sets = fs.readdirSync(iconifyJsonPath);
+    if (sets.length > 0) {
+      const jsonPath = path.join(modulePath, 'json');
+      fs.emptyDirSync(jsonPath);
+      for (const set of sets) {
+        const iconFile = path.join(iconifyJsonPath, set, 'icons.json');
+        if (fs.existsSync(iconFile)) {
+          fs.cpSync(iconFile, path.join(jsonPath, `${set}.json`));
+        }
+      }
+    }
+
+    return {
+      version: 'latest',
+      sets,
+    };
   }
 
   const pkg = JSON.parse(fs.readFileSync(pkgFile, 'utf-8'));
@@ -40,7 +62,7 @@ function checkInstallPkg(pkgInfo) {
   if (version && Array.isArray(sets) && sets.length > 0) {
     return;
   }
-  throw new Error(`Please install ${PKG_NAME} package`);
+  throw new Error(`Please install "${PKG_NAME}" or "@iconify-json/*" package`);
 }
 
 type PreHandleOptions = Omit<IconifyOptions, 'local'> & {
@@ -61,7 +83,7 @@ function preHandleOptions(options?: IconifyOptions): PreHandleOptions {
   const { local } = opts;
   const pkgInfo = getIconifyInfo();
 
-  opts.version = pkgInfo?.version;
+  opts.version ??= pkgInfo?.version;
 
   const localOpts: IconifyLocal = {
     sets: [],

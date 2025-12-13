@@ -4,20 +4,25 @@
 
 [English](./README.md) | **中文**
 
-> vite 插件，用于处理 iconify 图标集，在无法访问公网的环境下使用
+> vite 插件，用于处理 iconify 图标集，可以在无法访问公网的环境下使用
 
 ## 安装
 
 ```bash
 # pnpm
-pnpm add @iconify/json @tomjs/vite-plugin-iconify -D
+pnpm add @tomjs/vite-plugin-iconify -D
 
-# yarn
-yarn add @iconify/json @tomjs/vite-plugin-iconify -D
+# yarn v1
+yarn add @tomjs/vite-plugin-iconify -D
 
 # npm
-npm i @iconify/json @tomjs/vite-plugin-iconify --save-dev
+npm i @tomjs/vite-plugin-iconify --save-dev
 ```
+
+### 说明
+
+- 根据需要安装 `@iconify/json` 或 `@iconify-json/*` 包
+- 插件会先判断是否安装 `@iconify/json`，否则会读取 `@iconify-json/*`，并将 `@iconify-json/*/icons.json` 其复制到 `@iconify/json/json/*.json`
 
 ## 使用说明
 
@@ -69,13 +74,14 @@ export default defineConfig({
 
 #### 参数
 
-| 参数名    | 类型                                        | 默认值  | 说明                                                     |
-| --------- | ------------------------------------------- | ------- | -------------------------------------------------------- |
-| selector  | `string`                                    | 'title' | 标签选择器，注入IconifyProviders脚本添加在指定的标签后面 |
-| resources | `string[]`                                  | []      | 图标 API 地址，默认带上 https://api.iconify.design       |
-| rotate    | `number`                                    | 750     | 使用下一个主机之前的超时时间（以毫秒为单位）             |
-| timeout   | `number`                                    | 5000    | API 查询被视为失败之前的超时时间（以毫秒为单位）         |
-| local     | `'boolean'\|'IconifySet[]'\|IconifyLocal[]` | false   | 本地图标集配置                                           |
+| 参数名    | 类型                                        | 默认值  | 说明                                                                                                   |
+| --------- | ------------------------------------------- | ------- | ------------------------------------------------------------------------------------------------------ |
+| selector  | `string`                                    | 'title' | 标签选择器，注入IconifyProviders脚本添加在指定的标签后面                                               |
+| resources | `string[]`                                  | []      | 图标 API 地址，默认带上 https://api.iconify.design                                                     |
+| rotate    | `number`                                    | 750     | 使用下一个主机之前的超时时间（以毫秒为单位）                                                           |
+| timeout   | `number`                                    | 5000    | API 查询被视为失败之前的超时时间（以毫秒为单位）                                                       |
+| version   | `string`                                    | 5000    | 设置要使用的`@iconify/json`版本。默认值从`package.json`读取，如果`@iconify/json`不存在，使用`"latest"` |
+| local     | `'boolean'\|'IconifySet[]'\|IconifyLocal[]` | false   | 本地图标集配置                                                                                         |
 
 **resources**: 你可以添加 npm cdn 或自定义url
 
@@ -100,12 +106,13 @@ iconify 图标集，参考 [icon sets](https://icon-sets.iconify.design/) 或 [I
 
 配置该参数，会根据 `sets` 配置，将本地图标集复制到 `outDir` 目录下
 
-| 参数名   | 类型           | 默认值                        | 说明                                             |
-| -------- | -------------- | ----------------------------- | ------------------------------------------------ |
-| **sets** | `IconifySet[]` | []                            | iconify 图标集                                   |
-| base     | `string`       | '/'                           | 同 vite 配置 base 选项                           |
-| outDir   | `string`       | 'dist'                        | 本地输出目录, 默认同 vite 配置 build.outDir 选项 |
-| path     | `string`       | 'npm/@iconify/json@{version}' | 本地输出路径，对应模块url也会替换为该路径        |
+| 参数名   | 类型                      | 默认值                        | 说明                                             |
+| -------- | ------------------------- | ----------------------------- | ------------------------------------------------ |
+| **sets** | `IconifySet[]`            | []                            | iconify 图标集                                   |
+| icons    | `${IconifySet}:${string}` | []                            | iconify 图标列表                                 |
+| base     | `string`                  | '/'                           | 同 vite 配置 base 选项                           |
+| outDir   | `string`                  | 'dist'                        | 本地输出目录, 默认同 vite 配置 build.outDir 选项 |
+| path     | `string`                  | 'npm/@iconify/json@{version}' | 本地输出路径，对应模块url也会替换为该路径        |
 
 ### 使用cli
 
@@ -135,6 +142,7 @@ Options:
 ## 开发
 
 - 开发环境
+
   - git
   - node>=16
   - pnpm>=8

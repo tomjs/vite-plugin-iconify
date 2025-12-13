@@ -1,0 +1,25 @@
+{
+  "name": "vue-multiple",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "@iconify-json/ant-design": "^1.2.5",
+    "@iconify-json/ep": "^1.2.3",
+    "@iconify/vue": "^5.0.0",
+    "ant-design-vue": "^4.2.6",
+    "vue": "^3.5.14"
+  },
+  "devDependencies": {
+    "@tomjs/vite-plugin-iconify": "workspace:^",
+    "@vitejs/plugin-vue": "^5.2.4",
+    "typescript": "^5.8.3",
+    "vue-tsc": "^1.8.25"
+  }
+}

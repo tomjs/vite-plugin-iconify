@@ -10,14 +10,19 @@
 
 ```bash
 # pnpm
-pnpm add @iconify/json @tomjs/vite-plugin-iconify -D
+pnpm add @tomjs/vite-plugin-iconify -D
 
 # yarn
-yarn add @iconify/json @tomjs/vite-plugin-iconify -D
+yarn add @tomjs/vite-plugin-iconify -D
 
 # npm
-npm i @iconify/json @tomjs/vite-plugin-iconify --save-dev
+npm i @tomjs/vite-plugin-iconify --save-dev
 ```
+
+### Instructions
+
+- Install either `@iconify/json` or `@iconify-json/*` packages as needed.
+- The plugin will first check if `@iconify/json` is installed; otherwise, it will read `@iconify-json/*` and copy `@iconify-json/*/icons.json` to `@iconify/json/json/*.json`.
 
 ## Usage
 
@@ -70,13 +75,14 @@ export default defineConfig({
 
 #### Parameters
 
-| Parameter | Type                                        | Default | Description                                                      |
-| --------- | ------------------------------------------- | ------- | ---------------------------------------------------------------- |
-| selector  | `string`                                    | 'title' | The tag selector to inject the IconifyProviders script after     |
-| resources | `string[]`                                  | []      | Icon API URLs, default includes https://api.iconify.design       |
-| rotate    | `number`                                    | 750     | Timeout in milliseconds before using the next host               |
-| timeout   | `number`                                    | 5000    | Timeout in milliseconds before an API query is considered failed |
-| local     | `'boolean'\|'IconifySet[]'\|IconifyLocal[]` | false   | Local icon set configuration                                     |
+| Parameter | Type                                        | Default  | Description                                                                                                                   |
+| --------- | ------------------------------------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| selector  | `string`                                    | 'title'  | The tag selector to inject the IconifyProviders script after                                                                  |
+| resources | `string[]`                                  | []       | Icon API URLs, default includes https://api.iconify.design                                                                    |
+| rotate    | `number`                                    | 750      | Timeout in milliseconds before using the next host                                                                            |
+| timeout   | `number`                                    | 5000     | Timeout in milliseconds before an API query is considered failed                                                              |
+| version   | `string`                                    | 'latest' | Set the version of `@iconify/json` to use. Default is read from `package.json`, if `@iconify/json` not exists, use `"latest"` |
+| local     | `'boolean'\|'IconifySet[]'\|IconifyLocal[]` | false    | Local icon set configuration                                                                                                  |
 
 **resources**: You can add npm cdn or custom url:
 
@@ -137,6 +143,7 @@ Options:
 ## Development
 
 - Development requirements:
+
   - git
   - node>=16
   - pnpm>=8
