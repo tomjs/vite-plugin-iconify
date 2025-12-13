@@ -1,3 +1,7 @@
+## [1.4.0](https://github.com/tomjs/vite-plugin-iconify/compare/v1.3.0...v1.4.0) (2025-12-13)
+
+- feat: support @iconify-json/* packages #2  [e9f0e1b](https://github.com/tomjs/vite-plugin-iconify/commit/e9f0e1b)
+
 ## [1.3.0](https://github.com/tomjs/vite-plugin-iconify/compare/v1.2.1...v1.3.0) (2025-11-23)
 
 - fix: mkdir icons path  [14c9001](https://github.com/tomjs/vite-plugin-iconify/commit/14c9001)
