@@ -61,7 +61,6 @@
     "prepublishOnly": "pnpm build"
   },
   "peerDependencies": {
-    "@iconify/json": "*",
     "vite": ">=2"
   },
   "dependencies": {

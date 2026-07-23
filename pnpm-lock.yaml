@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@iconify/json':
-        specifier: '*'
-        version: 2.2.341
       cac:
         specifier: ^6.7.14
         version: 6.7.14
