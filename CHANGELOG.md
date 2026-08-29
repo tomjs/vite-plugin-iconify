@@ -1,3 +1,7 @@
+## [1.5.1](https://github.com/tomjs/vite-plugin-iconify/compare/v1.5.0...v1.5.1) (2026-08-29)
+
+- chore: change email  [aa4d1fd](https://github.com/tomjs/vite-plugin-iconify/commit/aa4d1fd)
+
 ## [1.5.0](https://github.com/tomjs/vite-plugin-iconify/compare/v1.3.0...v1.5.0) (2026-07-23)
 
 - chore: remove @iconify/json peerDependencies  [5831dd3](https://github.com/tomjs/vite-plugin-iconify/commit/5831dd3)
