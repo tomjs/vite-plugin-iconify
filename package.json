@@ -4,8 +4,8 @@
   "packageManager": "pnpm@10.11.0",
   "description": "A Vite plugin for handling iconify icon sets in environments without internet access.",
   "author": {
-    "name": "tom",
-    "email": "tom@tomgao.cc"
+    "name": "Tom Gao",
+    "email": "tom@tomgao.cn"
   },
   "license": "MIT",
   "repository": {

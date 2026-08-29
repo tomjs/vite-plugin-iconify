@@ -76,7 +76,7 @@ function preHandleOptions(options?: IconifyOptions): PreHandleOptions {
     cloneDeep(options) as PreHandleOptions,
   );
 
-  opts.resources = opts.resources || [];
+  opts.resources = Array.isArray(opts.resources) ? opts.resources : [];
   opts.rotate = opts.rotate || 750;
   opts.timeout = opts.timeout || 5000;
 
@@ -159,7 +159,7 @@ export function useIconifyPlugin(options?: IconifyOptions): PluginOption {
       let urls = opts.resources || [];
       if (Array.isArray(sets) && sets.length > 0) {
         const baseUrl = opts.local.base || userConfig?.base || '/';
-        urls = [urlConcat(baseUrl, opts.local.path || '')];
+        urls = [urlConcat(baseUrl, opts.local.path || '')].concat(urls);
       }
 
       urls = [...new Set(urls.map(s => getUrlPath(s, opts.version)).concat([DEFAULT_API]))].map(
@@ -173,7 +173,8 @@ export function useIconifyPlugin(options?: IconifyOptions): PluginOption {
   IconifyProviders = {
       '': {
           resources: [${urls.join(',')}],
-          rotate: 1000,
+          rotate: ${opts.rotate},
+          timeout: ${opts.timeout},
       },
   };
 </script>`,
